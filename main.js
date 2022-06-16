@@ -223,7 +223,7 @@ function animate() {
       rectangle1: player,
       rectangle2: enemy
     }) &&
-    player.isAttacking && 
+    player.isAttacking &&
     player.frameCurrent === 4
   ) {
     enemy.takeHit()
@@ -234,7 +234,7 @@ function animate() {
   }
 
   // if player misses
-  if(player.isAttacking && player.frameCurrent === 4){
+  if (player.isAttacking && player.frameCurrent === 4) {
     player.isAttacking = false
   }
 
@@ -254,7 +254,7 @@ function animate() {
   }
 
   // if enemy misses
-  if(enemy.isAttacking && enemy.frameCurrent === 2){
+  if (enemy.isAttacking && enemy.frameCurrent === 2) {
     enemy.isAttacking = false
   }
 
@@ -271,7 +271,7 @@ function animate() {
 animate()
 
 window.addEventListener('keydown', (e) => {
-  if(!player.dead) {
+  if (!player.dead) {
     switch (e.key) {
       case 'd':
         keys.d.pressed = true
@@ -287,10 +287,11 @@ window.addEventListener('keydown', (e) => {
       case ' ':
         player.attack()
         break
+    }
   }
 
-  if(!enemy.dead)
-    switch(e.key){
+  if (!enemy.dead) {
+    switch (e.key) {
       case 'ArrowRight':
         keys.ArrowRight.pressed = true
         enemy.lastKey = 'ArrowRight'
@@ -304,10 +305,10 @@ window.addEventListener('keydown', (e) => {
         break
       case 'ArrowDown':
         enemy.attack()
-      break
+        break
     }
-  }
 
+  }
 })
 
 window.addEventListener('keyup', (e) => {
